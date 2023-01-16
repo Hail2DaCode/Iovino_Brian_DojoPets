@@ -1,4 +1,6 @@
 import dojo_pets_class_pet
+import dojo_pets_class_cat
+import dojo_pets_class_dog
 class Ninja:
     def __init__(self, first_name , last_name , treats , pet_food , pet={"name": "dog" , "Type": "doberman" , "tricks": "play dead" } ):
         self.first_name = first_name
@@ -6,9 +8,9 @@ class Ninja:
         self.treats = treats
         self.pet_food = pet_food
         if pet["Type"] == "dog":
-            self.pet = dojo_pets_class_pet.Dog(pet["name"],pet["Type"], pet["tricks"], pet["breed"])
+            self.pet = dojo_pets_class_dog.Dog(pet["name"],pet["Type"], pet["tricks"], pet["breed"])
         elif pet["Type"] == "cat":
-            self.pet = dojo_pets_class_pet.Cat(pet["name"],pet["Type"], pet["tricks"], pet["breed"])
+            self.pet = dojo_pets_class_cat.Cat(pet["name"],pet["Type"], pet["tricks"], pet["breed"])
     def walk(self):
         self.pet.play()
         return self
@@ -48,6 +50,6 @@ ninja_1.walk().feed().bathe()
 print(ninja_1.pet.health)
 print(ninja_1.pet.energy)
 print(ninja_1.pet.breed)
-dojo_pets_class_pet.Cat.display_cats()
+dojo_pets_class_cat.Cat.display_cats()
 dojo_pets_class_pet.Pet.display_pets()
-dojo_pets_class_pet.Dog.display_dogs()
+dojo_pets_class_dog.Dog.display_dogs()
